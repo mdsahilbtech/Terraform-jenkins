@@ -22,11 +22,13 @@ pipeline {
             }
 
         stage('Plan') {
-            steps {
+            steps {         
+                withAWS(credentials: 'jenkins', region: 'us-east-1') {
                 sh 'pwd;cd terraform/ ; terraform init'
                 sh "pwd;cd terraform/ ; terraform plan -out tfplan"
                 sh 'pwd;cd terraform/ ; terraform show -no-color tfplan > tfplan.txt'
             }
+          }      
         }
         stage('Approval') {
            when {
