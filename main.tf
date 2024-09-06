@@ -1,4 +1,5 @@
 provider "aws" {
+profile = "default"
 shared_credentials_files = ["~/.aws/credentials"]
 region = "us-east-1"
 }
