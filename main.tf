@@ -1,7 +1,8 @@
 provider "aws" {
-profile = "default"
-shared_credentials_files = ["~/.aws/credentials"]
-region = "us-east-1"
+  region     = "us-east-1"
+  access_key = "AKIA47CRUHJFVCXMW4HP"
+  secret_key = "AKIA47CRUHJFVCXMW4HP"
+  profile    = "default"
 }
 resource "aws_instance" "foo" {
   ami           = "ami-070f589e4b4a3fece" # us-west-2
